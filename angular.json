@@ -37,6 +37,7 @@
           },
           "configurations": {
             "production": {
+              "deployUrl": "./",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
