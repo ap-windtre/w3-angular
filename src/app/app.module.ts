@@ -9,6 +9,10 @@ import { ItemInputComponent } from './main/item-input/item-input.component';
 import { ListComponent } from './main/list/list.component';
 import { ListItemComponent } from './main/list/list-item/list-item.component';
 import { SearchItemComponent } from './main/search-item/search-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ProductFilterPipe } from './pipe/product-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,17 @@ import { SearchItemComponent } from './main/search-item/search-item.component';
     ItemInputComponent,
     ListComponent,
     ListItemComponent,
-    SearchItemComponent
+    SearchItemComponent,
+    ProductFilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [ProductFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

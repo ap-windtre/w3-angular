@@ -1,3 +1,12 @@
-<div class="col-8 border-item custom-margin">
-    item component
+<div class="row product-row">
+    <label class="col-sm">
+        {{product.name}}
+    </label>
+    <label class="col-sm">
+        {{product.price}}
+    </label>
+    <label class="col-sm">
+        {{product.category}}
+    </label>
+    <img src="../../../../assets/icon/trash.svg" (click)=onDelete(product.id)><img>
 </div>

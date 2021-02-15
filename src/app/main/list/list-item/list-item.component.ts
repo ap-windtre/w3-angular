@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductItem } from '../../model/product';
+import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-list-item',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() product!: ProductItem;
 
-  ngOnInit(): void {
+  constructor(private service: ProductService) { }
+
+  ngOnInit(): void { }
+
+  onDelete(id: string){
+    this.service.emitProductdEvent(id);
   }
 
 }

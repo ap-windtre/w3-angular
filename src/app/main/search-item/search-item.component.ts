@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProductItem } from '../model/product';
 
 @Component({
   selector: 'app-search-item',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() products!: Array<ProductItem>;
+  @Output() filtered = new EventEmitter();
 
-  ngOnInit(): void {
+  filterText: string = "";
+  
+  constructor() {}
+
+  ngOnInit(): void { }
+
+  onSearch(){
+    if(this.products){ this.filtered.emit(this.filterText);}
   }
 
 }
