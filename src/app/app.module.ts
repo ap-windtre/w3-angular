@@ -9,10 +9,11 @@ import { ItemInputComponent } from './main/item-input/item-input.component';
 import { ListComponent } from './main/list/list.component';
 import { ListItemComponent } from './main/list/list-item/list-item.component';
 import { SearchItemComponent } from './main/search-item/search-item.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductFilterPipe } from './pipe/product-filter.pipe';
+import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ProductFilterPipe } from './pipe/product-filter.pipe';
     ListComponent,
     ListItemComponent,
     SearchItemComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,11 @@ import { ProductFilterPipe } from './pipe/product-filter.pipe';
     FormsModule,
     CommonModule
   ],
-  providers: [ProductFilterPipe],
+  providers: [
+    ProductFilterPipe,
+    { provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
