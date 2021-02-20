@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductFilterPipe } from '../pipe/product-filter.pipe';
 import { ProductItem } from './model/product';
@@ -9,7 +9,7 @@ import { ProductService } from './service/product.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
 
   products!: Array<ProductItem>;
   filteredItems! : Array<ProductItem>;
