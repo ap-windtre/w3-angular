@@ -9,6 +9,14 @@ import { ItemInputComponent } from './main/item-input/item-input.component';
 import { ListComponent } from './main/list/list.component';
 import { ListItemComponent } from './main/list/list-item/list-item.component';
 import { SearchItemComponent } from './main/search-item/search-item.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ProductFilterPipe } from './pipe/product-filter.pipe';
+import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
+import { FantacalcioComponent } from './fantacalcio/fantacalcio.component';
+import { PlayerComponent } from './player/player.component';
+import { FantacalcioService } from './service/fantacalcio.service';
 
 @NgModule({
   declarations: [
@@ -18,11 +26,23 @@ import { SearchItemComponent } from './main/search-item/search-item.component';
     ItemInputComponent,
     ListComponent,
     ListItemComponent,
-    SearchItemComponent
+    SearchItemComponent,
+    ProductFilterPipe,
+    FantacalcioComponent,
+    PlayerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    CommonModule
+  ],
+  providers: [
+    FantacalcioService,
+    ProductFilterPipe,
+    { provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
+
   ],
   providers: [],
   bootstrap: [AppComponent]

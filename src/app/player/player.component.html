@@ -1,0 +1,11 @@
+<div *ngFor="let p of players">
+    <label>Giocatore: {{p}}</label>
+    <button (click)="remove(p)">Rimuovi</button>
+</div>
+
+<div>
+    <input type="text" [(ngModel)]="value"/>
+    <button (click)="add()">Aggiungi</button>
+</div>
+
+

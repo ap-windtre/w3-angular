@@ -1,0 +1,11 @@
+<p>fantacalcio works!</p>
+
+<div>{{message}}</div>
+<div> Giocatori</div>
+
+<app-player
+ [players]="players" 
+ (playerEmitter)="onPlayerRemove($event)"
+ (addEmitter)="onAddPlayer($event)"
+ > 
+</app-player>
