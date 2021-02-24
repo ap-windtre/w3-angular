@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { FantacalcioComponent } from './fantacalcio/fantacalcio.component';
 import { PlayerComponent } from './player/player.component';
 import { FantacalcioService } from './service/fantacalcio.service';
+import { BindingComponent } from './binding/binding.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FantacalcioService } from './service/fantacalcio.service';
     SearchItemComponent,
     FantacalcioComponent,
     PlayerComponent,
+    BindingComponent,
   ],
   imports: [
     BrowserModule,
