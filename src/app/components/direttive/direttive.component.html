@@ -4,7 +4,7 @@
 <div *ngIf="status == 'LOADED'">Caricamento effettuato. Preparo la lista...</div>
 <div *ngIf="status == 'FULL'">
     <ul>
-        <li *ngFor="let item of items; let myIndex = index; let isOdd = odd;">
+        <li *ngFor="let item of items; let myIndex = index; let isOdd = odd; let isFirst = first">
             
             
             <p *ngIf="isOdd" style="background-color: lightgray;">

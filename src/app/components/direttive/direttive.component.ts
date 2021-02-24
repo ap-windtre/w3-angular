@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirettiveComponent implements OnInit {
 
-  status: string;
+  status!: string;
   items: any[] = []
 
   constructor() { }
