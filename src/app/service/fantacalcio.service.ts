@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+
 @Injectable()
 export class FantacalcioService {
 
-  private _message = "Ciao dal Service";
+  private _message = "FANTACALCIO (...dal service)";
 
   get message() {return this._message}
 
