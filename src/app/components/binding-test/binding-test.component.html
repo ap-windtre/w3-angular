@@ -1,0 +1,24 @@
+<p>binding-test works!</p>
+
+<p>
+    <strong>String interpolation</strong>: {{property1}}<br/>
+    <strong>String interpolation</strong>: {{property2}}<br/>
+    <strong>String interpolation</strong>: {{property3 | json}}<br/>
+    <strong>String interpolation</strong>: {{property4}}
+</p>
+
+<input type="text" (keydown)="onKeyDown($event)">
+<button [disabled]="property1 && property2 && !property3" 
+    (click)="buy(productId, $event)">Acquista</button>  
+<button disabled="disabled">Click me if you can 2</button>
+
+
+
+<br/>
+<a href="http://www.windtre.it">WindTre</a><br/>
+<a [href]="siteUrl">WindTre</a><br/>
+
+<br/>
+Nome: <input type="text" [(ngModel)]="nome" /><br/>
+Cognome: <input type="text" [(ngModel)]="cognome" /><br/>
+<button (click)="salvaUtente()">Salva</button>

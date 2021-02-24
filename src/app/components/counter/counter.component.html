@@ -1,0 +1,4 @@
+<h1>Contatore</h1>
+<h2>Conteggio attuale: {{counter}}</h2>
+<button (click)="increase()">Aumenta Contatore</button>
+<button (click)="decrease()" [disabled]="!canDecrease">Diminuisci Contatore</button>
