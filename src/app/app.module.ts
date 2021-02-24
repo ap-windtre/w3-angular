@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductFilterPipe } from './pipe/product-filter.pipe';
 import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
+import { FantacalcioComponent } from './fantacalcio/fantacalcio.component';
+import { PlayerComponent } from './player/player.component';
+import { FantacalcioService } from './service/fantacalcio.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
     ListItemComponent,
     SearchItemComponent,
     ProductFilterPipe,
+    FantacalcioComponent,
+    PlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
     CommonModule
   ],
   providers: [
+    FantacalcioService,
     ProductFilterPipe,
     { provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
 
