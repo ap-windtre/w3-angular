@@ -13,7 +13,7 @@ import { ExamplesViewComponent } from './components/examples-view/examples-view.
 import { FantacalcioComponent } from './components/fantacalcio/fantacalcio.component';
 import { FantacalcioService } from './service/fantacalcio.service';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { ItemInputComponent } from './components/main/item-input/item-input.component';
 import { ListComponent } from './components/main/list/list.component';
@@ -50,6 +50,7 @@ import { TestItemComponent } from './components/test-item/test-item.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     CommonModule
   ],
