@@ -10,8 +10,11 @@
         margin-right: 10px;
     }
   .navbar {
-    color: #fd4b14;
     font-weight: bold;
     background-color: white !important;
+    &-brand {
+      color: #fd4b14;
+      font-weight: bold;
+    }
   }
 }

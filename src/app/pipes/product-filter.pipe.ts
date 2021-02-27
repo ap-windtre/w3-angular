@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ProductItem } from '../main/model/product';
+import { ProductItem } from '../components/main/model/product';
 
 @Pipe({
   name: 'productFilter'

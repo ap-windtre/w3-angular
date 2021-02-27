@@ -15,13 +15,13 @@ import { FantacalcioService } from './service/fantacalcio.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
-import { ItemInputComponent } from './main/item-input/item-input.component';
-import { ListComponent } from './main/list/list.component';
-import { ListItemComponent } from './main/list/list-item/list-item.component';
-import { MainComponent } from './main/main.component';
+import { ItemInputComponent } from './components/main/item-input/item-input.component';
+import { ListComponent } from './components/main/list/list.component';
+import { ListItemComponent } from './components/main/list/list-item/list-item.component';
+import { MainComponent } from './components/main/main.component';
 import { PlayerComponent } from './components/fantacalcio/player/player.component';
-import { ProductFilterPipe } from './pipe/product-filter.pipe';
-import { SearchItemComponent } from './main/search-item/search-item.component';
+import { ProductFilterPipe } from './pipes/product-filter.pipe';
+import { SearchItemComponent } from './components/main/search-item/search-item.component';
 import { TestItemComponent } from './components/test-item/test-item.component';
 
 @NgModule({

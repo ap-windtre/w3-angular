@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ProductFilterPipe } from '../pipe/product-filter.pipe';
+import { ProductFilterPipe } from '../../pipes/product-filter.pipe';
 import { ProductItem } from './model/product';
 import { ProductService } from './service/product.service';
 

@@ -7,9 +7,9 @@ import { AppRoutingModule } from '../app-routing.module';
 @Injectable()
 export class FantacalcioService {
 
-  private _message = "Ciao dal Service";
+  private internalMessage = 'Ciao dal Service';
 
-  get message() {return this._message}
+  get message(): string { return this.internalMessage; }
 
   constructor() { }
 }
