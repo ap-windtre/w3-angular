@@ -17,6 +17,7 @@ import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
 import { FantacalcioComponent } from './fantacalcio/fantacalcio.component';
 import { PlayerComponent } from './player/player.component';
 import { FantacalcioService } from './service/fantacalcio.service';
+import { ExamplesViewComponent } from './components/examples-view/examples-view.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FantacalcioService } from './service/fantacalcio.service';
     ProductFilterPipe,
     FantacalcioComponent,
     PlayerComponent,
+    ExamplesViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,9 +5,9 @@ import { environment } from 'src/environments/environment';
 import { ProductItem } from '../model/product';
 
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+   providedIn: 'root'
+})
 @Injectable()
 export class ProductService {
 

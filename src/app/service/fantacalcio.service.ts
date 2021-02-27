@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+   providedIn: 'root'
+})
 @Injectable()
 export class FantacalcioService {
 

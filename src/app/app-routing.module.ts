@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ExamplesViewComponent } from './components/examples-view/examples-view.component';
 import { FantacalcioComponent } from './fantacalcio/fantacalcio.component';
 import { ItemInputComponent } from './main/item-input/item-input.component';
 import { MainComponent } from './main/main.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   {path: '' , component: MainComponent},
   {path: 'home' , component: MainComponent},
   {path: 'insert' , component: ItemInputComponent},
+  {path: 'examples' , component: ExamplesViewComponent},
   {path: 'fantacalcio', component: FantacalcioComponent}
 ];
 
