@@ -1,10 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
-.custom-margin{
-    margin: 1em;
-    padding: 0.2em;
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    width: 100%;
 }
 
-div{
+main {
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1em;
+}
+
+.app-content {
+    background-color: white;
+    flex: 1;
+    overflow: auto;
+}
+
+
+
+.custom-margin {
     margin: 1em;
+    padding: 0.2em;
 }

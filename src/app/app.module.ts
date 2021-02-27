@@ -19,6 +19,7 @@ import { BindingTestComponent } from './components/binding-test/binding-test.com
 import { CounterComponent } from './components/counter/counter.component';
 import { DirettiveComponent } from './components/direttive/direttive.component';
 import { TestItemComponent } from './components/test-item/test-item.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TestItemComponent } from './components/test-item/test-item.component';
     SearchItemComponent,
     FantacalcioComponent,
     PlayerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
