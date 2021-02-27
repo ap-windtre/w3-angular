@@ -1,0 +1,19 @@
+<p>direttive works!</p>
+
+<div *ngIf="status == 'LOADING'">Caricamento in corso...</div>
+<div *ngIf="status == 'LOADED'">Caricamento effettuato. Preparo la lista...</div>
+<div *ngIf="status == 'FULL'">
+    <ul>
+        <li *ngFor="let item of items; let myIndex = index; let isOdd = odd; let isFirst = first">
+            
+            
+            <p *ngIf="isOdd" style="background-color: lightgray;">
+                {{myIndex}} - Nome: {{item.name}}<br/>First: {{isFirst}}
+            </p>
+            <p *ngIf="!isOdd">
+                {{myIndex}} - Nome: {{item.name}}<br/>First: {{isFirst}}
+            </p>
+        </li>
+    </ul>
+    <app-test-item *ngFor="let item of items" [name]="item.name"> </app-test-item>
+</div>  
