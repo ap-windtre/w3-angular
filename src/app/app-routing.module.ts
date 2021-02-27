@@ -12,11 +12,16 @@ const routes: Routes = [
   {path: '' , component: MainComponent},
   {path: 'home' , component: MainComponent},
   {path: 'insert' , component: ItemInputComponent},
-  {path: 'examples' , component: ExamplesViewComponent},
-  {path: 'fantacalcio', component: FantacalcioComponent},
-  {path: 'binding', component: BindingTestComponent},
-  {path: 'counter', component: CounterComponent},
-  {path: 'direttive', component: DirettiveComponent}
+  {
+    path: 'examples' , component: ExamplesViewComponent,
+    children: [
+      { path: 'fantacalcio', component: FantacalcioComponent },
+      { path: 'binding', component: BindingTestComponent },
+      { path: 'counter', component: CounterComponent },
+      { path: 'direttive', component: DirettiveComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'fantacalcio' }
+    ]
+  }
 ];
 
 @NgModule({

@@ -1,11 +1,11 @@
-
+<h1>Fantacalcio</h1>
 <div><strong>{{message}}</strong></div>
 
 <div> Lista dei Giocatori</div>
 
 <app-player
- [players]="players" 
+ [players]="players"
  (playerEmitter)="onPlayerRemove($event)"
  (addEmitter)="onAddPlayer($event)"
- > 
+ >
 </app-player>

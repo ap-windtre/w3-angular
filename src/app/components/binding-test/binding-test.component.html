@@ -1,4 +1,4 @@
-<p>binding-test works!</p>
+<h1>Binding</h1>
 
 <p>
     <strong>String interpolation</strong>: {{property1}}<br/>
@@ -8,8 +8,8 @@
 </p>
 
 <input type="text" (keydown)="onKeyDown($event)">
-<button [disabled]="property1 && property2 && !property3" 
-    (click)="buy(productId, $event)">Acquista</button>  
+<button [disabled]="property1 && property2 && !property3"
+    (click)="buy(productId, $event)">Acquista</button>
 <button disabled="disabled">Click me if you can 2</button>
 
 
