@@ -8,7 +8,6 @@ import { ProductItem } from '../model/product';
 @Injectable({
    providedIn: 'root'
 })
-@Injectable()
 export class ProductService {
 
   private productEvent = new BehaviorSubject<string>('');
@@ -33,7 +32,7 @@ export class ProductService {
 
   emitProductdEvent(id: string){
     this.productEvent.next(id)
- }
+  }
 
  productListner(){
     return this.productEvent.asObservable();
