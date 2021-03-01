@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ProductItem } from '../model/product';
 
@@ -10,7 +10,8 @@ import { ProductItem } from '../model/product';
 })
 export class ProductService {
 
-  private productEvent = new BehaviorSubject<string>('');
+  private productEvent = new Subject<string>();
+  //private productEvent = new BehaviorSubject<string>('');
   private _products!: Array<ProductItem>;
 
   constructor(private http: HttpClient) { }
@@ -34,8 +35,8 @@ export class ProductService {
     this.productEvent.next(id)
   }
 
- productListner(){
+  productObservable(){
     return this.productEvent.asObservable();
-  } 
+  }
 
 }

@@ -19,7 +19,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getProducts();
-    this.subscription = this.productService.productListner().subscribe((value) => {
+    this.subscription = this.productService.productObservable().subscribe((value) => {
       if(value){
         this.productService.deleteProduct(value).subscribe(() => {
           this.getProducts();
@@ -36,10 +36,18 @@ export class MainComponent implements OnInit, OnDestroy {
     this.productService.retrieveProducts().subscribe(data => {
       this.products = data;
       this.productService.products = data;
+    }, 
+    error => {
+      console.log(error);
     })
+    // this.productService.retrieveProducts().subscribe({
+    //   next: (data) => {console.log(data)},
+    //   error: (error)  => {console.log(error)}
+    // })
   }
 
   ngOnDestroy() {
+    console.log("onDestroy");
     this.subscription.unsubscribe();
   }
 
