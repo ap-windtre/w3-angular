@@ -27,7 +27,7 @@ export class ProductService {
     return this.http.post<ProductItem[]>(environment.api + '/v0/hero/products', product);
   }
 
-  deleteProduct(id: string): Observable<any>{
+  deleteProduct(id: number): Observable<any>{
     return this.http.delete<ProductItem[]>(environment.api + '/v0/hero/products/' +id);
   }
 
