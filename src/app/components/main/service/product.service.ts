@@ -10,7 +10,7 @@ import { ProductItem } from '../model/product';
 })
 export class ProductService {
 
-  private productEvent = new Subject<string>();
+  private productEvent = new Subject<number>();
   //private productEvent = new BehaviorSubject<string>('');
   private _products!: Array<ProductItem>;
 
@@ -31,7 +31,7 @@ export class ProductService {
     return this.http.delete<ProductItem[]>(environment.api + '/v0/hero/products/' +id);
   }
 
-  emitProductdEvent(id: string){
+  emitProductdEvent(id: number){
     this.productEvent.next(id)
   }
 

@@ -1,11 +1,10 @@
 export interface ProductItem {
-    id: string;
+    id: number;
     name: string;
     price: number;
     category: ProductCategory;
+    quantity: number;
 }
 
 export enum ProductCategory {
-    // todo
-
 }
