@@ -10,8 +10,9 @@ import { BindingTestComponent } from './components/binding-test/binding-test.com
 
 const routes: Routes = [
   {path: '' , component: MainComponent},
-  {path: 'home' , component: MainComponent},
+  {path: 'product' , component: MainComponent},
   {path: 'insert' , component: ItemInputComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'product' },
   {
     path: 'examples' , component: ExamplesViewComponent,
     children: [

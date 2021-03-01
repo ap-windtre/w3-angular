@@ -44,7 +44,7 @@ import { TestItemComponent } from './components/test-item/test-item.component';
     ProductFilterPipe,
     FantacalcioComponent,
     PlayerComponent,
-    ExamplesViewComponent,
+    ExamplesViewComponent
   ],
   imports: [
     BrowserModule,
