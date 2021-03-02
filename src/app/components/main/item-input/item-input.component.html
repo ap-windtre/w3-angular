@@ -1,9 +1,10 @@
 <h1>Inserisci prodotto</h1>
-<form class="form" [formGroup]="formGroup">
+<form class="form" [formGroup]="productForm">
   <div class="form-input">
     <label for="product-name">Prodotto: </label>
     <input type="text" id="product-name" [formControlName]="'name'">
   </div>
+
   <div class="form-input">
     <label for="product-price">Prezzo: </label>
     <input type="text" id="product-price" [formControlName]="'price'">

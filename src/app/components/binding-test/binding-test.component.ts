@@ -14,6 +14,8 @@ export class BindingTestComponent implements OnInit {
   property1 = 'Test property';
   property2 = 999;
 
+  today = new Date()
+
   siteUrl = 'http://www.windtre.it';
 
   property3 = {
@@ -45,6 +47,12 @@ export class BindingTestComponent implements OnInit {
 
   salvaUtente(): void {
     alert('Sto salvando ' + this.nome + ' ' + this.cognome);
+    /*this.userService.saveUser({
+      name: this.nome,
+      surname: this.cognome
+    }).subscribe(resp => {
+      console.log(resp);
+    })*/
   }
 
 }

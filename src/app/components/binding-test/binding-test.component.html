@@ -12,7 +12,11 @@
     (click)="buy(productId, $event)">Acquista</button>
 <button disabled="disabled">Click me if you can 2</button>
 
+<h2>La data di oggi è {{today | date:'dd/MM/yyyy'}}</h2>
+<h3>{{property1 | uppercase}}</h3>
+<h3>{{property2 | currency:'EUR'}}</h3>
 
+<h3>{{nome | sayHello:'prova'}}</h3>
 
 <br/>
 <a href="http://www.windtre.it">WindTre</a><br/>

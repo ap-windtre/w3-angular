@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductItem } from '../model/product';
 import { ProductService } from '../service/product.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-item-input',
@@ -10,35 +10,34 @@ import { ProductService } from '../service/product.service';
 })
 export class ItemInputComponent implements OnInit {
 
-  public formGroup: FormGroup;
+  public productForm: FormGroup;
 
   constructor(private fb: FormBuilder, private productService: ProductService) { }
 
-  private generateFormGroup(): FormGroup {
-     return this.fb.group({
-      name: this.fb.control(undefined, Validators.required),
-      price: this.fb.control(undefined, Validators.required),
-      category: this.fb.control(undefined, Validators.required),
-      quantity: this.fb.control(undefined, Validators.required)
+  ngOnInit(): void {
+    this.productForm = new FormGroup({
+      name: new FormControl(undefined, Validators.compose([ Validators.required, Validators.minLength(3) ]) ),
+      price: new FormControl(1, Validators.compose([ Validators.required, Validators.max(10), Validators.min(3) ]) ),
+      category: new FormControl('Pasta e Pane', Validators.required)
     });
   }
 
-  ngOnInit(): void {
-    this.formGroup = this.generateFormGroup();
-  }
-
   onSave(): void {
-    if (this.formGroup.invalid) {
+    if (this.productForm.invalid) {
       alert('Il form non è completo. Tutti i campi sono obbligatori');
       return;
     }
-    let product = {} as ProductItem;
 
-    product.name = this.formGroup.value.name;
-    product.category = this.formGroup.value.category;
-    product.price = this.formGroup.value.price;
-    product.quantity = this.formGroup.value.quantity;
-    this.productService.addProduct(product).subscribe( () => {alert("Prodotto Inserito")});
+    const product = {} as ProductItem;
+    product.name = this.productForm.value.name;
+    product.category = this.productForm.value.category;
+    product.price = this.productForm.value.price;
+    product.quantity = this.productForm.value.quantity;
+    this.productService.addProduct(product).subscribe( () => {
+      alert('Prodotto Inserito');
+    });
+
+    // alert(JSON.stringify(this.productForm.value));
   }
 
 }

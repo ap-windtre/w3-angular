@@ -24,6 +24,7 @@ import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { SearchItemComponent } from './components/main/search-item/search-item.component';
 import { TestItemComponent } from './components/test-item/test-item.component';
 import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
+import { SayHelloPipe } from './pipes/say-hello.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ItemDetailComponent } from './components/main/item-detail/item-detail.c
     FantacalcioComponent,
     PlayerComponent,
     ExamplesViewComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    SayHelloPipe
   ],
   imports: [
     BrowserModule,

@@ -35,6 +35,6 @@ input.ng-valid {
 
 }
 
-input.ng-invalid:not(.ng-untouched) {
+input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
