@@ -23,6 +23,7 @@ import { PlayerComponent } from './components/fantacalcio/player/player.componen
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { SearchItemComponent } from './components/main/search-item/search-item.component';
 import { TestItemComponent } from './components/test-item/test-item.component';
+import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TestItemComponent } from './components/test-item/test-item.component';
     ProductFilterPipe,
     FantacalcioComponent,
     PlayerComponent,
-    ExamplesViewComponent
+    ExamplesViewComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,

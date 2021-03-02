@@ -1,0 +1,7 @@
+<div *ngIf="quantity">
+    In stock: {{quantity}}
+</div>
+<div *ngIf="!quantity">
+    Ops.. non ho ancora caricato la lista dei prodotti.
+    <label class="customLink pointer" (click)="goToProduct()">Portami li</label>
+</div>

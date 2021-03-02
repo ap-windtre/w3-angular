@@ -34,12 +34,20 @@ export class MainComponent implements OnInit, OnDestroy {
 
   private getProducts(){
     this.productService.retrieveProducts().subscribe(data => {
+      console.log("la mia response: ", data);
       this.products = data;
       this.productService.products = data;
     }, 
     error => {
       console.log(error);
     })
+
+
+
+
+
+
+    
     // this.productService.retrieveProducts().subscribe({
     //   next: (data) => {console.log(data)},
     //   error: (error)  => {console.log(error)}

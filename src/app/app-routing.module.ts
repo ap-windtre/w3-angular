@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { DirettiveComponent } from './components/direttive/direttive.component';
 import { BindingTestComponent } from './components/binding-test/binding-test.component';
+import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
 
 const routes: Routes = [
   {path: '' , component: MainComponent},
@@ -22,7 +23,10 @@ const routes: Routes = [
       { path: 'direttive', component: DirettiveComponent },
       { path: '', pathMatch: 'full', redirectTo: 'fantacalcio' }
     ]
-  }
+  },
+  {path: 'pizza', loadChildren: () => import('./pizza/pizza.module').then(m => m.PizzaModule)},
+  {path: 'detail/:id' , component: ItemDetailComponent},
+
 ];
 
 @NgModule({
