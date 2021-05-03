@@ -1,0 +1,25 @@
+Creare il componente con Angular CLI
+
+ng g c header 
+(o ng generate component header)
+
+nel file HTML scrivere questo codice
+
+<div class="app-header">
+{{title}}
+</div>
+
+nel file TS scrivere questo codice
+
+title: string = "Lista della spesa";
+
+nel file CSS scrivere questo codice (non necessario, ma utile per dare un minimo di stile).
+
+.app-header {
+    align-items: center;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 100%
+}

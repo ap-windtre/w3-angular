@@ -1,0 +1,91 @@
+- Creare un’applicazione 'w3-angular' con la CLI, abilitandone il routing
+
+ng new w3-angular
+
+// Scegliere
+strict = no
+routing = yes
+css style = SCSS
+
+// Testare poi con 
+cd w3-angular
+ng serve
+
+Se necessario, rivedere slides su Angular CLI
+
+=====
+
+Creare tutti i componenti richiesti per l'app della lista e posizionarli nella pagina
+
+Seguendo l'alberatura di slide 31:
+
+ng g c header
+ng g c list
+ng g c list/list-item
+ng g c item-input
+
+In app.component.html, rimuovere tutto (lasciando solo <router-outlet></router-outlet>)
+
+e scrivere
+
+<app-header></app-header>
+
+
+dentro list.component.html, scrivere
+
+<h2>Lista</h2>
+<app-list-item></app-list-item>
+<app-list-item></app-list-item>
+<app-list-item></app-list-item>
+
+=======
+
+Impostare le rotte /list e /detail e i rispettivi componenti
+
+ng g c list-view
+ng g c detail-view
+
+in app-routing.module
+
+routes = [
+    {
+        path: 'detail',
+        component: DetailViewComponent
+    },
+    {
+        path: '',
+        pathMatch: 'full',
+        component: ListViewComponent
+    },
+    {
+        path: '**',
+        component: ListViewComponent
+    }
+];
+
+Spostare il codice
+<app-item-input></app-item-input>
+<app-list></app-list>
+da app.component a list-view.component.html
+
+
+=====
+
+Preparare i modelli di Product e ProductItem
+
+creare un file src/models/product.module.ts
+
+enum ProductCategories {
+    PASTA = 'pasta',
+    SWEETS = 'sweets',
+    VEGETABLES = 'vegetables'
+};
+
+interface ProductV2 {
+    id: number;
+    name: string;
+    category: ProductCategories;
+    quantity: number;
+    price: number;
+}
+

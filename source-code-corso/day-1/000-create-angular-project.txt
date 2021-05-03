@@ -1,0 +1,12 @@
+npm install -g @angular/cli
+ng new corso-w3-angular
+
+// Scegliere
+strict = no
+routing = yes
+css style = SCSS
+
+// Testare poi con 
+
+cd corso-w3-angular
+ng serve
