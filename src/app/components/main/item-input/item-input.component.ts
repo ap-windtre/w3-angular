@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductItem } from '../model/product';
 import { ProductService } from '../service/product.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-input',
@@ -12,7 +13,9 @@ export class ItemInputComponent implements OnInit {
 
   public productForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private productService: ProductService) { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.productForm = new FormGroup({
@@ -28,13 +31,11 @@ export class ItemInputComponent implements OnInit {
       return;
     }
 
-    const product = {} as ProductItem;
-    product.name = this.productForm.value.name;
-    product.category = this.productForm.value.category;
-    product.price = this.productForm.value.price;
-    product.quantity = this.productForm.value.quantity;
+    const product = this.productForm.value as ProductItem;
+
     this.productService.addProduct(product).subscribe( () => {
       alert('Prodotto Inserito');
+      this.router.navigate(['product']);
     });
 
     // alert(JSON.stringify(this.productForm.value));

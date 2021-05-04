@@ -23,6 +23,11 @@
 <a [href]="siteUrl">WindTre</a><br/>
 
 <br/>
+<!-- TEMPLATE DRIVEN FORM-->
 Nome: <input type="text" [(ngModel)]="nome" /><br/>
+<span *ngIf="!nome.length">Il nome è obbligatorio</span>
+
 Cognome: <input type="text" [(ngModel)]="cognome" /><br/>
-<button (click)="salvaUtente()">Salva</button>
+<span *ngIf="!cognome.length">Il cognome è obbligatorio</span>
+
+<button (click)="salvaUtente()" [disabled]="!(nome.length && cognome.length)">Salva</button>

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BindingTestComponent implements OnInit {
 
   productId = 'AT643314514';
+
   nome: string = '';
   cognome: string = '';
 
@@ -46,7 +47,11 @@ export class BindingTestComponent implements OnInit {
   }
 
   salvaUtente(): void {
+    if (!(this.nome && this.cognome)) {
+      return;
+    }
     alert('Sto salvando ' + this.nome + ' ' + this.cognome);
+
     /*this.userService.saveUser({
       name: this.nome,
       surname: this.cognome
