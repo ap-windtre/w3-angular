@@ -7,4 +7,6 @@ export interface ProductItem {
 }
 
 export enum ProductCategory {
+  PASTA = 'pasta',
+  SWEETS = 'sweets'
 }

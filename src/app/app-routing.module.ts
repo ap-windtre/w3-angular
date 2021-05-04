@@ -8,6 +8,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { DirettiveComponent } from './components/direttive/direttive.component';
 import { BindingTestComponent } from './components/binding-test/binding-test.component';
 import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
+import { ReactiveFormsViewComponent } from './components/reactive-forms-view/reactive-forms-view.component';
 
 const routes: Routes = [
   {path: '' , component: MainComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'binding', component: BindingTestComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'direttive', component: DirettiveComponent },
+      { path: 'reactive-form', component: ReactiveFormsViewComponent },
       { path: '', pathMatch: 'full', redirectTo: 'fantacalcio' }
     ]
   },

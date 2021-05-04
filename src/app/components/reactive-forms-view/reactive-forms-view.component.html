@@ -1,0 +1,67 @@
+<h1>Form avanzate</h1>
+
+<h2>Form</h2>
+<form [formGroup]="userForm">
+  <div>
+    <label>First name</label>
+    <input type="text" [formControlName]="'firstName'" />
+  </div>
+  <div>
+    <label>Last name</label>
+    <input type="text" [formControlName]="'lastName'" />
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="text" [formControlName]="'email'" />
+  </div>
+  <div>
+    <label>Privacy policy</label>
+    <input type="checkbox" [formControlName]="'privacyPolicy'" /> Accetto tutto
+  </div>
+  <div>
+    <label>Gender</label>
+    <select [formControlName]="'gender'">
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+  <div [formGroupName]="'address'">
+    <strong>Address</strong>
+    <div>
+      <label>Street</label>
+      <input type="text" [formControlName]="'street'" />
+    </div>
+    <div>
+      <label>Zip Code</label>
+      <input type="text" [formControlName]="'zipCode'" />
+      <span *ngIf="userForm.get('address.zipCode') && userForm.get('address.zipCode').errors">
+        <span *ngIf="userForm.get('address.zipCode').errors.required">
+          Il campo è obbligatorio
+        </span>
+        <span *ngIf="userForm.get('address.zipCode').errors.minlength">
+          Il campo dev'essere almeno di {{userForm.get('address.zipCode').errors.minlength.requiredLength}} caratteri
+        </span>
+      </span>
+    </div>
+  </div>
+</form>
+
+<button (click)="saveForm()" [disabled]="this.userForm.invalid">Salva form</button>
+<button (click)="checkFormState()">Verifica form</button>
+
+{{transformText('prova')}}
+
+
+
+
+<h2>Valore del form </h2>
+{{this.userForm.value | json }}
+<br/>
+<hr/>
+{{this.userForm.value | showJson}}
+
+
+{{today | date:'d/mm/yy'}}
+
+

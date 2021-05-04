@@ -1,0 +1,7 @@
+input.ng-invalid:not(.ng-pristine) {
+  border: 2px dashed red;
+}
+
+form.ng-invalid:not(.ng-pristine) {
+  border: 2px dashed red;
+}

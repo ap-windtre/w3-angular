@@ -25,6 +25,8 @@ import { SearchItemComponent } from './components/main/search-item/search-item.c
 import { TestItemComponent } from './components/test-item/test-item.component';
 import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
 import { SayHelloPipe } from './pipes/say-hello.pipe';
+import { ReactiveFormsViewComponent } from './components/reactive-forms-view/reactive-forms-view.component';
+import { ShowJsonPipe } from './show-json.pipe';
 
 @NgModule({
   declarations: [
@@ -48,15 +50,17 @@ import { SayHelloPipe } from './pipes/say-hello.pipe';
     PlayerComponent,
     ExamplesViewComponent,
     ItemDetailComponent,
-    SayHelloPipe
+    SayHelloPipe,
+    ReactiveFormsViewComponent,
+    ShowJsonPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [
     FantacalcioService,
