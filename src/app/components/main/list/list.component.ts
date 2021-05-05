@@ -14,9 +14,9 @@ export class ListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void { }
 
-  ngOnChanges(changes: SimpleChanges){
+  ngOnChanges(changes: SimpleChanges): void {
     // Vediamo insieme cosa accade
   }
-  
+
 }
 

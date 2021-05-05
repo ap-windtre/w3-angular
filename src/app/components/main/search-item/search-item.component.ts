@@ -11,14 +11,16 @@ export class SearchItemComponent implements OnInit {
   @Input() products!: Array<ProductItem>;
   @Output() filtered = new EventEmitter();
 
-  filterText: string = "";
-  
+  filterText = '';
+
   constructor() {}
 
   ngOnInit(): void { }
 
-  onSearch(){
-    if(this.products){ this.filtered.emit(this.filterText);}
+  onSearch(): void {
+    if (this.products) {
+      this.filtered.emit(this.filterText);
+    }
   }
 
 }

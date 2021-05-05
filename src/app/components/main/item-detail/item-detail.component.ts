@@ -9,20 +9,20 @@ import { ProductService } from '../service/product.service';
 })
 export class ItemDetailComponent implements OnInit {
 
-  quantity!:number;
+  quantity!: number;
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe( params => {
-      if(params.id && this.productService.products){
-        this.quantity = this.productService.products.find( p => p.id == params.id)?.quantity;
+      if (params.id && this.productService.products) {
+        this.quantity = this.productService.products.find( p => p.id === params.id)?.quantity;
       }
-    })
+    });
   }
 
-  goToProduct(){
-    this.router.navigate(['product'])
+  goToProduct(): void {
+    this.router.navigate(['product']);
 
   }
 

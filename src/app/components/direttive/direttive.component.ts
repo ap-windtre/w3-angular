@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DirettiveComponent implements OnInit {
 
   status!: string;
-  items: any[] = []
+  items: any[] = [];
 
   constructor() { }
 
@@ -17,19 +17,24 @@ export class DirettiveComponent implements OnInit {
     this.loadData();
   }
 
-  loadData() {
+  loadData(): void {
     // Chiama API REST
     setTimeout(() => {
       this.status = 'LOADED';
       this.elaborateData();
-    }, 3000)
+    }, 3000);
   }
 
-  elaborateData() {
+  elaborateData(): void {
     // Elabora...
     setTimeout(() => {
       this.status = 'FULL';
-      this.items = [{ name: "Achille"}, { name: "Ettore"}, { name: "Renato"}, { name: "Antonio"}];
+      this.items = [
+        { name: 'Achille'},
+        { name: 'Ettore'},
+        { name: 'Patroclo'},
+        { name: 'Agamennone'}
+      ];
     }, 2000);
   }
 

@@ -6,7 +6,7 @@ import { ProductItem } from '../components/main/model/product';
 })
 export class ProductFilterPipe implements PipeTransform {
 
-  transform(products: ProductItem[], text:string): any {
+  transform(products: ProductItem[], text: string): any {
     if (!products) {
       return [];
     }

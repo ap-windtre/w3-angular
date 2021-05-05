@@ -9,7 +9,7 @@ export class PlayerComponent implements OnInit, OnChanges {
 
   value!: string;
 
-  @Input() players! : string[]
+  @Input() players!: string[];
   @Output() playerEmitter = new EventEmitter();
   @Output() addEmitter = new EventEmitter();
 
@@ -18,15 +18,15 @@ export class PlayerComponent implements OnInit, OnChanges {
   ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("PlayerComponent - ngOnChanges ", changes);
+    console.log('PlayerComponent - ngOnChanges ', changes);
   }
 
-  remove(p: string){
+  remove(p: string): void {
     this.playerEmitter.emit(p);
   }
 
-  add(){
-    if(this.value && this.value.length > 0){
+  add(): void{
+    if (this.value && this.value.length > 0) {
       this.addEmitter.emit(this.value);
     }
   }

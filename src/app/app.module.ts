@@ -22,11 +22,10 @@ import { MainComponent } from './components/main/main.component';
 import { PlayerComponent } from './components/fantacalcio/player/player.component';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { SearchItemComponent } from './components/main/search-item/search-item.component';
-import { TestItemComponent } from './components/test-item/test-item.component';
 import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
 import { SayHelloPipe } from './pipes/say-hello.pipe';
 import { ReactiveFormsViewComponent } from './components/reactive-forms-view/reactive-forms-view.component';
-import { ShowJsonPipe } from './show-json.pipe';
+import { ShowJsonPipe } from './pipes/show-json.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { ShowJsonPipe } from './show-json.pipe';
     BindingTestComponent,
     CounterComponent,
     DirettiveComponent,
-    TestItemComponent,
     HeaderComponent,
     MainComponent,
     ItemInputComponent,

@@ -10,12 +10,12 @@ import { ProductItem } from '../model/product';
 })
 export class ProductService {
 
-  //SUBSCRIPTION: Dichiariamo il nostro Observale
+  // SUBSCRIPTION: Dichiariamo il nostro Observale
   private productEvent = new Subject<number>();
 
-  //SUBSCRIPTION: Dichiariamo il nostro Observale
-  //praticamente uguale al subject precedente ma consente di emittare un valore iniziale.
-  //private productEvent = new BehaviorSubject<string>('');
+  // SUBSCRIPTION: Dichiariamo il nostro Observale
+  // praticamente uguale al subject precedente ma consente di emittare un valore iniziale.
+  // private productEvent = new BehaviorSubject<string>('');
 
 
   private _products!: Array<ProductItem>;
@@ -23,7 +23,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   public get products(): Array<ProductItem> { return this._products; }
-  public set products(value: Array<ProductItem>) { this._products = value;}
+  public set products(value: Array<ProductItem>) { this._products = value; }
 
   retrieveProducts(): Observable<ProductItem[]>{
     return this.http.get<ProductItem[]>(environment.api + '/v0/hero/products');
@@ -34,19 +34,19 @@ export class ProductService {
   }
 
   deleteProduct(id: number): Observable<any>{
-    return this.http.delete<ProductItem[]>(environment.api + '/v0/hero/products/' +id);
+    return this.http.delete<ProductItem[]>(environment.api + '/v0/hero/products/' + id);
   }
 
 
 
-  //SUBCRIPTION
-  //emitta con il next il valore aggiornato.
-  emitProductdEvent(id: number){
-    this.productEvent.next(id)
+  // SUBCRIPTION
+  // emitta con il next il valore aggiornato.
+  emitProductdEvent(id: number): void {
+    this.productEvent.next(id);
   }
 
   // da richimare col .subscribe per mettersi in ascolto....
-  productObservable(){
+  productObservable(): Observable<number>{
     return this.productEvent.asObservable();
   }
 

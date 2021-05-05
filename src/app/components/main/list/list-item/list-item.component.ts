@@ -15,7 +15,7 @@ export class ListItemComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onDelete(id: number){
+  onDelete(id: number): void {
     this.service.emitProductdEvent(id);
   }
 

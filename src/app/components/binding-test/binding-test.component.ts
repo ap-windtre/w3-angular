@@ -9,13 +9,13 @@ export class BindingTestComponent implements OnInit {
 
   productId = 'AT643314514';
 
-  nome: string = '';
-  cognome: string = '';
+  nome = '';
+  cognome = '';
 
   property1 = 'Test property';
   property2 = 999;
 
-  today = new Date()
+  today = new Date();
 
   siteUrl = 'http://www.windtre.it';
 

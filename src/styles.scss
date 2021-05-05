@@ -1,24 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body {
-    margin: 0;
-    height: 100%;
-    padding: 0;
-    width: 100%;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  width: 100%;
 }
 
 main {
-    background-color: lightgrey;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1em;
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1em;
 }
 
 .app-content {
-    background-color: white;
-    flex: 1;
-    overflow: auto;
+  background-color: white;
+  min-height: calc(100% - 132px);
+  overflow: auto;
   padding: 1em;
 }
 
@@ -30,13 +30,12 @@ h1 {
   padding-bottom: 15px;
 }
 
-
 .custom-margin {
-    margin: 1em;
-    padding: 0.2em;
+  margin: 1em;
+  padding: 0.2em;
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
   cursor: hand;
 }

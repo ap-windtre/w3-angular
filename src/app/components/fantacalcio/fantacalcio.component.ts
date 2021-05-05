@@ -17,11 +17,11 @@ export class FantacalcioComponent implements OnInit {
     this.message = this.service.message;
   }
 
-  onPlayerRemove(event:any){
-    this.players = this.players.filter( f => f != event);
+  onPlayerRemove(event: any): void {
+    this.players = this.players.filter( f => f !== event);
   }
 
-  onAddPlayer(event: any){
+  onAddPlayer(event: any): void {
     this.players.push(event);
     this.players = this.players.slice();
   }
