@@ -15,14 +15,14 @@ import { FantacalcioService } from './services/fantacalcio.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
-import { ItemInputComponent } from './components/main/item-input/item-input.component';
-import { ListComponent } from './components/main/list/list.component';
-import { ListItemComponent } from './components/main/list/list-item/list-item.component';
-import { MainComponent } from './components/main/main.component';
+import { InsertViewComponent } from './components/insert-view/insert-view.component';
+import { ListComponent } from './components/main-view/list/list.component';
+import { ListItemComponent } from './components/main-view/list/list-item/list-item.component';
+import { MainViewComponent } from './components/main-view/main-view.component';
 import { PlayerComponent } from './components/fantacalcio/player/player.component';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
-import { SearchItemComponent } from './components/main/search-item/search-item.component';
-import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
+import { SearchItemComponent } from './components/main-view/search-item/search-item.component';
+import { ItemDetailViewComponent } from './components/item-detail-view/item-detail-view.component';
 import { SayHelloPipe } from './pipes/say-hello.pipe';
 import { ReactiveFormsViewComponent } from './components/reactive-forms-view/reactive-forms-view.component';
 import { ShowJsonPipe } from './pipes/show-json.pipe';
@@ -34,8 +34,8 @@ import { ShowJsonPipe } from './pipes/show-json.pipe';
     CounterComponent,
     DirettiveComponent,
     HeaderComponent,
-    MainComponent,
-    ItemInputComponent,
+    MainViewComponent,
+    InsertViewComponent,
     ListComponent,
     ListItemComponent,
     SearchItemComponent,
@@ -47,7 +47,7 @@ import { ShowJsonPipe } from './pipes/show-json.pipe';
     FantacalcioComponent,
     PlayerComponent,
     ExamplesViewComponent,
-    ItemDetailComponent,
+    ItemDetailViewComponent,
     SayHelloPipe,
     ReactiveFormsViewComponent,
     ShowJsonPipe

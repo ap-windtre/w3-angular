@@ -14,8 +14,8 @@
     <input type="text" id="product-category" [formControlName]="'category'">
   </div>
   <div class="form-input">
-    <label for="product-category">Quantità: </label>
-    <input type="text" id="product-category" [formControlName]="'quantity'">
+    <label for="product-quantity">Quantità: </label>
+    <input type="text" id="product-quantity" [formControlName]="'quantity'">
   </div>
   <div class="form-input">
     <button class="btn btn-primary" [disabled]="this.productForm.invalid" (click)="onSave()">Aggiungi prodotto</button>

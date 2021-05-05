@@ -1,15 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ProductFilterPipe } from '../../pipes/product-filter.pipe';
-import { ProductItem } from './model/product';
-import { ProductService } from './service/product.service';
+import { ProductItem } from '../../models/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-main-view',
+  templateUrl: './main-view.component.html',
+  styleUrls: ['./main-view.component.scss']
 })
-export class MainComponent implements OnInit, OnDestroy {
+export class MainViewComponent implements OnInit, OnDestroy {
 
   products!: Array<ProductItem>;
   filteredItems!: Array<ProductItem>;

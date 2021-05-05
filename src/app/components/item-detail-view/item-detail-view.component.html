@@ -1,0 +1,18 @@
+<h1>Dettaglio prodotto</h1>
+<div class="container">
+  <div *ngIf="currentProduct">
+    <ul>
+      <li>Nome prodotto: {{currentProduct.name}}</li>
+      <li>Categoria: {{currentProduct.category}}</li>
+      <li>Prezzo: {{currentProduct.price | currency}}</li>
+      <li>In stock: {{currentProduct.quantity}}</li>
+    </ul>
+  </div>
+  <div *ngIf="!currentProduct">
+    Ops.. non ho ancora caricato la lista dei prodotti.
+  </div>
+  <div>
+    <label class="customLink pointer" (click)="goToProduct()">Vai alla lista prodotti</label>
+  </div>
+</div>
+

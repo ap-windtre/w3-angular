@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemInputComponent } from './item-input.component';
+import { InsertViewComponent } from './insert-view.component';
 
 describe('ItemInputComponent', () => {
-  let component: ItemInputComponent;
-  let fixture: ComponentFixture<ItemInputComponent>;
+  let component: InsertViewComponent;
+  let fixture: ComponentFixture<InsertViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemInputComponent ]
+      declarations: [ InsertViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemInputComponent);
+    fixture = TestBed.createComponent(InsertViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

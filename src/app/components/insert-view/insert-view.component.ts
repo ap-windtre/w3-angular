@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductItem } from '../model/product';
-import { ProductService } from '../service/product.service';
+import { ProductItem } from '../../models/product';
+import { ProductService } from '../../services/product.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-input',
-  templateUrl: './item-input.component.html',
-  styleUrls: ['./item-input.component.scss']
+  templateUrl: './insert-view.component.html',
+  styleUrls: ['./insert-view.component.scss']
 })
-export class ItemInputComponent implements OnInit {
+export class InsertViewComponent implements OnInit {
 
   public productForm: FormGroup;
 

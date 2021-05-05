@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FantacalcioComponent } from './components/fantacalcio/fantacalcio.component';
 import { ExamplesViewComponent } from './components/examples-view/examples-view.component';
-import { ItemInputComponent } from './components/main/item-input/item-input.component';
-import { MainComponent } from './components/main/main.component';
+import { InsertViewComponent } from './components/insert-view/insert-view.component';
+import { MainViewComponent } from './components/main-view/main-view.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { DirettiveComponent } from './components/direttive/direttive.component';
 import { BindingTestComponent } from './components/binding-test/binding-test.component';
-import { ItemDetailComponent } from './components/main/item-detail/item-detail.component';
+import { ItemDetailViewComponent } from './components/item-detail-view/item-detail-view.component';
 import { ReactiveFormsViewComponent } from './components/reactive-forms-view/reactive-forms-view.component';
 
 const routes: Routes = [
-  { path: 'product' , component: MainComponent },
-  { path: 'insert' , component: ItemInputComponent },
-  { path: 'detail/:id' , component: ItemDetailComponent },
+  { path: 'product' , component: MainViewComponent },
+  { path: 'insert' , component: InsertViewComponent },
+  { path: 'detail/:id' , component: ItemDetailViewComponent },
   { path: 'pizza', loadChildren: () => import('./pizza/pizza.module').then(m => m.PizzaModule) },
   {
     path: 'examples' , component: ExamplesViewComponent,
