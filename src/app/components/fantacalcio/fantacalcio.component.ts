@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FantacalcioService } from '../../service/fantacalcio.service';
+import { FantacalcioService } from '../../services/fantacalcio.service';
 
 @Component({
   selector: 'app-fantacalcio',

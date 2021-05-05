@@ -11,24 +11,22 @@ import { ItemDetailComponent } from './components/main/item-detail/item-detail.c
 import { ReactiveFormsViewComponent } from './components/reactive-forms-view/reactive-forms-view.component';
 
 const routes: Routes = [
-  {path: '' , component: MainComponent},
-  {path: 'product' , component: MainComponent},
-  {path: 'insert' , component: ItemInputComponent},
-  {path: '', pathMatch: 'full', redirectTo: 'product' },
+  { path: 'product' , component: MainComponent },
+  { path: 'insert' , component: ItemInputComponent },
+  { path: 'detail/:id' , component: ItemDetailComponent },
+  { path: 'pizza', loadChildren: () => import('./pizza/pizza.module').then(m => m.PizzaModule) },
   {
     path: 'examples' , component: ExamplesViewComponent,
     children: [
-      { path: 'fantacalcio', component: FantacalcioComponent },
       { path: 'binding', component: BindingTestComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'direttive', component: DirettiveComponent },
+      { path: 'fantacalcio', component: FantacalcioComponent },
       { path: 'reactive-form', component: ReactiveFormsViewComponent },
       { path: '', pathMatch: 'full', redirectTo: 'fantacalcio' }
     ]
   },
-  {path: 'pizza', loadChildren: () => import('./pizza/pizza.module').then(m => m.PizzaModule)},
-  {path: 'detail/:id' , component: ItemDetailComponent},
-
+  { path: '', pathMatch: 'full', redirectTo: 'product' }
 ];
 
 @NgModule({

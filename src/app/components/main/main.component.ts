@@ -15,7 +15,7 @@ export class MainComponent implements OnInit, OnDestroy {
   filteredItems!: Array<ProductItem>;
   subscription!: Subscription;
 
-  constructor(private productService: ProductService, private pipe: ProductFilterPipe) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -28,12 +28,28 @@ export class MainComponent implements OnInit, OnDestroy {
     });
   }
 
+  filterProducts(products: ProductItem[], searchText: string): ProductItem[] {
+    if (!products) {
+      return [];
+    }
+    if (!searchText) {
+      return products;
+    }
+    searchText = searchText.toLocaleLowerCase();
+
+    return products.filter(p => {
+      return p.name.toLocaleLowerCase().includes(searchText);
+    });
+  }
+
   onFiltered(searchText: any): void {
-    this.products = this.pipe.transform(Object.assign([], this.productService.products), searchText);
+    this.products = this.filterProducts(this.productService.products, searchText);
   }
 
   private getProducts(): void {
-    this.productService.retrieveProducts().subscribe(data => {
+    this.productService
+      .retrieveProducts()
+      .subscribe(data => {
       console.log('la mia response: ', data);
       this.products = data;
       this.productService.products = data;
@@ -41,10 +57,6 @@ export class MainComponent implements OnInit, OnDestroy {
     error => {
       console.log(error);
     });
-    // this.productService.retrieveProducts().subscribe({
-    //   next: (data) => {console.log(data)},
-    //   error: (error)  => {console.log(error)}
-    // })
   }
 
   ngOnDestroy(): void {

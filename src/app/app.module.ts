@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppHttpInterceptor } from './@core/interceptor/app-http-interceptor';
+import { AppHttpInterceptor } from './interceptors/app-http-interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -11,7 +11,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { DirettiveComponent } from './components/direttive/direttive.component';
 import { ExamplesViewComponent } from './components/examples-view/examples-view.component';
 import { FantacalcioComponent } from './components/fantacalcio/fantacalcio.component';
-import { FantacalcioService } from './service/fantacalcio.service';
+import { FantacalcioService } from './services/fantacalcio.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
