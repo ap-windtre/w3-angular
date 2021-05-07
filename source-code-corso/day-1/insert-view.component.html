@@ -1,0 +1,45 @@
+<div>
+  <!-- HEADER -->
+  <div class="app-header border-header">
+    <img src="assets/windtre-logo-dsk.png" alt="WindTre">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" routerLink="product">Lista della spesa</a>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav" routerLinkActive="active">
+          <li class="nav-item"><a class="nav-link" routerLink="product">Prodotti</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="insert">Inserisci</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- PAGE CONTENT -->
+  <div class="app-content">
+    <h1>Inserisci prodotto</h1>
+    <form class="form">
+      <div class="form-input">
+        <label for="product-name">Prodotto: </label>
+        <input type="text" id="product-name">
+      </div>
+
+      <div class="form-input">
+        <label for="product-price">Prezzo: </label>
+        <input type="text" id="product-price">
+      </div>
+      <div class="form-input">
+        <label for="product-category">Categoria: </label>
+        <input type="text" id="product-category">
+      </div>
+      <div class="form-input">
+        <label for="product-quantity">Quantità: </label>
+        <input type="text" id="product-quantity">
+      </div>
+      <div class="form-input">
+        <button class="btn btn-primary">Aggiungi prodotto</button>
+      </div>
+    </form>
+  </div>
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    Angular: Corso Base 2021
+  </footer>
+</div>
