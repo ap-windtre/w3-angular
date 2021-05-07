@@ -18,12 +18,21 @@ export class MainViewComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getProducts();
-    this.subscription = this.productService.productObservable().subscribe((value) => {
-      if (value) {
-        this.productService.deleteProduct(value).subscribe(() => {
-          this.getProducts();
-        });
-      }
+    // AVANZATO: Gestione centralizzata degli eventi. Vedere list-item e deleteItem.
+    // Per la gestione base vedere onDeleteItem qui in fondo al codice.
+    this.subscription = this.productService.productEventObservable()
+      .subscribe((eventInfo) => {
+        if (eventInfo.id) {
+          switch (eventInfo.type) {
+            case 'delete':
+              this.productService.deleteProduct(eventInfo.id).subscribe(() => {
+                this.getProducts();
+              });
+              break;
+            default:
+              alert('Evento non gestito');
+          }
+        }
     });
   }
 
@@ -61,5 +70,12 @@ export class MainViewComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     console.log('onDestroy');
     this.subscription.unsubscribe();
+  }
+
+  // BASE: Gestione delete item con Output. Vedere la catena che parte da list-item, va a list, e arriva qui
+  onDeleteItem(id: number): void {
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.getProducts();
+    });
   }
 }

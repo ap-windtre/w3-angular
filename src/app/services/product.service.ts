@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ProductItem } from '../models/product';
+import { EventInfo } from '../models/event';
 
 
 @Injectable({
@@ -10,8 +11,8 @@ import { ProductItem } from '../models/product';
 })
 export class ProductService {
 
-  // SUBSCRIPTION: Dichiariamo il nostro Observale
-  private productEvent = new Subject<number>();
+  // SUBSCRIPTION: Dichiariamo il nostro Observable
+  private productEvent = new Subject<EventInfo>();
 
   // SUBSCRIPTION: Dichiariamo il nostro Observale
   // praticamente uguale al subject precedente ma consente di emittare un valore iniziale.
@@ -41,12 +42,13 @@ export class ProductService {
 
   // SUBCRIPTION
   // emitta con il next il valore aggiornato.
-  emitProductdEvent(id: number): void {
-    this.productEvent.next(id);
+  emitProductEvent(settings): void {
+    const { type, id } = settings;
+    this.productEvent.next({ type, id });
   }
 
-  // da richimare col .subscribe per mettersi in ascolto....
-  productObservable(): Observable<number>{
+  // da richiamare col .subscribe per mettersi in ascolto....
+  productEventObservable(): Observable<EventInfo>{
     return this.productEvent.asObservable();
   }
 

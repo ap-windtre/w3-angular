@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h2>Prodotti</h2>
         <div *ngFor="let item of products">
-          <app-list-item [product]="item" ></app-list-item>
+          <app-list-item [product]="item" (deleteItem)="onDeleteItem($event)" ></app-list-item>
         </div>
       </div>
 </div>
