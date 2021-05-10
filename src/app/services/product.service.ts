@@ -31,13 +31,12 @@ export class ProductService {
   }
 
   addProduct(product: ProductItem): Observable<any>{
-    return this.http.post<ProductItem[]>(environment.api + '/v0/hero/products', product);
+    return this.http.post(environment.api + '/v0/hero/products', product);
   }
 
   deleteProduct(id: number): Observable<any>{
-    return this.http.delete<ProductItem[]>(environment.api + '/v0/hero/products/' + id);
+    return this.http.delete(environment.api + '/v0/hero/products/' + id);
   }
-
 
 
   // SUBCRIPTION
